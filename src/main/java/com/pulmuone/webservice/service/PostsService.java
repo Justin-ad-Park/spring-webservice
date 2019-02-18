@@ -2,9 +2,13 @@ package com.pulmuone.webservice.service;
 
 import com.pulmuone.webservice.domain.posts.PostsRepository;
 import com.pulmuone.webservice.dto.posts.PostsSaveRequestDto;
+import com.pulmuone.webservice.dto.posts.posts.PostsMainResponseDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -19,5 +23,12 @@ public class PostsService {
     @Transactional
     public Long save(PostsSaveRequestDto dto){
         return postsRepository.save(dto.toEntity()).getId();
+    }
+
+    @Transactional(readOnly = true)
+    public List<PostsMainResponseDto> findAllDesc() {
+        return postsRepository.findAllDesc()
+                .map(PostsMainResponseDto::new)     //new == posts -> new PostsMainResponseDto(posts)
+                .collect(Collectors.toList());
     }
 }
