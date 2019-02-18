@@ -1,8 +1,8 @@
 package com.pulmuone.webservice.web;
 
 import com.pulmuone.webservice.domain.posts.Posts;
-import com.pulmuone.webservice.domain.posts.PostsRepository;
 import com.pulmuone.webservice.dto.posts.PostsSaveRequestDto;
+import com.pulmuone.webservice.service.PostsService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,24 +25,15 @@ public class WebRestController {
         이중 가장 권장하는 방식이 생성자로 주입받는 방식입니다.
         (@Autowired는 비권장)
      */
-    private PostsRepository postsRepository;
+    private PostsService postsService;
 
     @GetMapping("/hello")
     public String hello() {
         return "HelloWorld";
     }
 
-    @GetMapping("/posts")
-    public String savePosts(){
-        List<Posts> postsList = postsRepository.findAll();
-
-        //then
-        Posts posts = postsList.get(0);
-        return posts.getTitle();
-    }
-
     @PostMapping("/posts")
     public void savePosts(@RequestBody PostsSaveRequestDto dto){
-        postsRepository.save(dto.toEntity());
+        postsService.save(dto);
     }
 }

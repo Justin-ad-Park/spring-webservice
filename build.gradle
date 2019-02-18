@@ -20,4 +20,5 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compile 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.1'
 }
