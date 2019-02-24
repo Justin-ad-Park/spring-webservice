@@ -1,0 +1,36 @@
+language: java
+jdk:
+  - openjdk8
+
+branches:
+  only:
+    - master
+
+# Travis CI 서버의 Home
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
+
+script: "./gradlew clean build"
+
+# CI 실행 완료시 메일로 알람
+notifications:
+  email:
+    recipients:
+      - justin.ad.park@gmail.com
+  slack:
+    secure: QsDc8IKwA0zACZ202nOsJT7TPvr/rICIkr/XQZlZ+8PRG1I/Ftc4/p+WF8rTgyWlEwfLMDZxbgLN1olUuIdhzZxhxhFZb9WjOngw459jaEX41sKJUrigibwjM/YA7/5wh4Zp2jjyZ02x7N9sD7pAM4FlioVQ0YZLsP0eCnLgVYRDIUZ4n3RJuntmbtYShU3TGg/CqiNdQQZIoggRZLEEuex2zM4yyUo5Fr6dZol8duJQqsqWUSlQ4hp4pU5N33aM+TzJ5irM43GrQiMRwohcR4MTUnWXEyVyK2eFjCUKFnBfDk5wzOk7frIqlirELY/II6vl9vXf6uTHLHB3h586gWJaz9Ah2ZnxPbBAvKR3ocgGWfEP9pfHwGNTS9gx2bhV0KPQ2N6aqZGdfREiGPoTDuXUory57qwGxeYFuO7tgjCfXT/1GkuI0E0/dy0rkkPuGUSZiJnz9e+2ObRaOZgregsP6UThwyfXk8AzEMT5a/Bc4ia0qr3ktevGZUsMI9hbK8hZlUWYiSroQr8qwJkK9NemvltIGPYUWbbLMsl1CJ3EVdMp/zljFWqzWi222o9GxfiFjZ8OafHsxjtgF0BP90W1wM0xGLjVE6woDA7Svy+UFz3q6og9TGA49AcK7CoaBkDVfCnL2TC9WBtoRlOZ3m1hOhLhiHeUph0rdVqN52w=
+
+
+#notifications:
+#  slack:
+#    rooms:
+#    - onlinebizdiv:EmqXqOiHxjoHcRtN84Vituh9#platform_notification
+
+#Set up travis to slack notification
+#execute command as below at the same directory with this file (.travis.yml)
+  #travis encrypt "onlinebizdiv:EmqXqOiHxjoHcRtN84Vituh9" --add notifications.slack
+# if specific repository
+  #travis encrypt "onlinebizdiv:EmqXqOiHxjoHcRtN84Vituh9" --add notifications.slack -r Justin-ad-Park/spring-webservice
+
