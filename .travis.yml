@@ -15,6 +15,11 @@ cache:
 script: "./gradlew clean build"
 
 # Deploy to S3
+before_deploy:
+  - zip -r spring-webservice *
+  - mkdir -p deploy
+  - mv spring-webservice.zip deploy/spring-webservice.zip
+
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
@@ -23,6 +28,7 @@ deploy:
     region: ap-northeast-2
     skip_cleanup: true
     acl: public_read
+    local_dir: deploy # before_deploy에서 생성한 디렉토리
     wait-until-deployed: true
     on:
       repo: Justin-ad-Park/spring-webservice #Github 주소
@@ -31,9 +37,12 @@ deploy:
 
 # CI 실행 완료시 메일로 알람
 notifications:
-  email:
-    recipients:
-      - justin.ad.park@gmail.com
+## Email notifications ###########
+#    email:
+#    recipients:
+#      - justin.ad.park@gmail.com
+#      - justin.park@pulmuone.com
+## Slack notification ############
   slack:
     secure: QsDc8IKwA0zACZ202nOsJT7TPvr/rICIkr/XQZlZ+8PRG1I/Ftc4/p+WF8rTgyWlEwfLMDZxbgLN1olUuIdhzZxhxhFZb9WjOngw459jaEX41sKJUrigibwjM/YA7/5wh4Zp2jjyZ02x7N9sD7pAM4FlioVQ0YZLsP0eCnLgVYRDIUZ4n3RJuntmbtYShU3TGg/CqiNdQQZIoggRZLEEuex2zM4yyUo5Fr6dZol8duJQqsqWUSlQ4hp4pU5N33aM+TzJ5irM43GrQiMRwohcR4MTUnWXEyVyK2eFjCUKFnBfDk5wzOk7frIqlirELY/II6vl9vXf6uTHLHB3h586gWJaz9Ah2ZnxPbBAvKR3ocgGWfEP9pfHwGNTS9gx2bhV0KPQ2N6aqZGdfREiGPoTDuXUory57qwGxeYFuO7tgjCfXT/1GkuI0E0/dy0rkkPuGUSZiJnz9e+2ObRaOZgregsP6UThwyfXk8AzEMT5a/Bc4ia0qr3ktevGZUsMI9hbK8hZlUWYiSroQr8qwJkK9NemvltIGPYUWbbLMsl1CJ3EVdMp/zljFWqzWi222o9GxfiFjZ8OafHsxjtgF0BP90W1wM0xGLjVE6woDA7Svy+UFz3q6og9TGA49AcK7CoaBkDVfCnL2TC9WBtoRlOZ3m1hOhLhiHeUph0rdVqN52w=
 
