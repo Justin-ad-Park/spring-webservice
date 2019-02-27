@@ -1,13 +1,17 @@
 spring:
   profiles:
-    active: local #로컬 개발 환경 선택
+    active: local # 기본 환경 선택
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
-# Local 환경
+# local 환경
 ---
 spring:
   profiles: local
   datasource:
-    data: classpath:data-h2.sql #시작할 때 실행시킬 script
+    data: classpath:data-h2.sql # 시작할때 실행시킬 script
   jpa:
     show-sql: true
     hibernate:
@@ -16,5 +20,17 @@ spring:
     console:
       enabled: true
 
-Server:
-  port: 8080
+# 운영 환경
+---
+spring.profiles: set1
+spring.profiles.include: real-db
+
+server:
+  port: 8081
+
+---
+spring.profiles: set2
+spring.profiles.include: real-db
+
+server:
+  port: 8082
