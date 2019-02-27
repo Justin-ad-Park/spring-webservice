@@ -41,7 +41,7 @@ stop on shutdown
 
 respawn
 script
-    exec su --session-command="nohup java -jar -Dspring.profiles.active=set1 /home/ec2-user/app/nonstop/jar/set1-spring-webservice.jar &" ec2-user
+    exec su --session-command="/home/ec2-user/app/nonstop/deploy.sh" ec2-user
 end script
 #####################################################
 
