@@ -6,9 +6,10 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
+# local 환경
 ---
 spring:
-  profiles: H2
+  profiles: local
   datasource:
     data: classpath:data-h2.sql # 시작할때 실행시킬 script
   jpa:
@@ -18,11 +19,6 @@ spring:
   h2:
     console:
       enabled: true
-
-# local 환경
----
-spring:profiles: local
-spring.profiles.include: H2
 
 
 # 운영 환경
@@ -36,6 +32,7 @@ server:
 
 ---
 spring.profiles: set2
+#spring.profiles.include: H2
 spring.profiles.include: real-db
 
 server:
