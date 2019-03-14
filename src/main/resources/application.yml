@@ -6,6 +6,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
+
 # local 환경
 ---
 spring:
@@ -20,6 +21,13 @@ spring:
     console:
       enabled: true
 
+  devtools:
+    livereload:
+      enabled: true
+
+  freemaker:
+      cache: false
+
 
 # 운영 환경
 ---
@@ -32,8 +40,8 @@ server:
 
 ---
 spring.profiles: set2
-#spring.profiles.include: H2
-spring.profiles.include: real-db
+spring.profiles.include: H2
+#spring.profiles.include: real-db
 
 server:
   port: 8082

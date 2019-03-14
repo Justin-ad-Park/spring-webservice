@@ -19,6 +19,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compile 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.1'
     compile "org.mariadb.jdbc:mariadb-java-client"
+    compile "org.springframework.boot:spring-boot-devtools"
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
