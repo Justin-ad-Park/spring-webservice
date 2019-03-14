@@ -39,9 +39,9 @@ start on started elastic-network-interfaces
 # Stop when the system is on its way down.
 stop on shutdown
 
-respawn
+#respawn
 script
-    exec su --session-command="/home/ec2-user/app/nonstop/deploy.sh" ec2-user
+    exec su --session-command="/bin/su - ec2-user /home/ec2-user/app/nonstop/execute-spring-webservice.sh"
 end script
 #####################################################
 
