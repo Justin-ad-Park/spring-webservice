@@ -16,9 +16,9 @@ script: "./gradlew clean build"
 
 ## Deploy to S3
 #before_deploy:
-#  - zip -r spring-webservice *
-#  - mkdir -p deploy
-#  - mv spring-webservice.zip deploy/spring-webservice.zip
+  - zip -r spring-webservice *
+  - mkdir -p deploy
+  - mv spring-webservice.zip deploy/spring-webservice.zip
 
 deploy:
   - provider: s3
@@ -27,8 +27,8 @@ deploy:
     bucket: springboot-webservice-deploy-pmo-seminar # 6-3-3에서 생성한 S3 버킷
     region: ap-northeast-2
     skip_cleanup: true
- #   acl: public_read
- #   local_dir: deploy # before_deploy에서 생성한 디렉토리
+    acl: public_read
+    local_dir: deploy # before_deploy에서 생성한 디렉토리
     wait-until-deployed: true
     on:
       repo: Justin-ad-Park/spring-webservice #Github 주소
