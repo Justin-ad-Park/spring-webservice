@@ -16,9 +16,9 @@ script: "./gradlew clean build"
 
 ## Deploy to S3
 before_deploy:
-#  - zip -r spring-webservice *
+  - zip -r spring-webservice *
   - mkdir -p deploy
-#  - mv spring-webservice.zip deploy/spring-webservice.zip
+  - mv spring-webservice.zip deploy/spring-webservice.zip
 
 deploy:
   - provider: s3
