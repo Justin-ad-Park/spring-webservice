@@ -1,6 +1,6 @@
-package com.pulmuone.webservice.dto.posts;
+package com.pulmuone.webservice.post.dto.posts;
 
-import com.pulmuone.webservice.domain.posts.Posts;
+import com.pulmuone.webservice.post.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

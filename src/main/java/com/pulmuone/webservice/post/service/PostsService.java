@@ -1,8 +1,8 @@
-package com.pulmuone.webservice.service;
+package com.pulmuone.webservice.post.service;
 
-import com.pulmuone.webservice.domain.posts.PostsRepository;
-import com.pulmuone.webservice.dto.posts.PostsSaveRequestDto;
-import com.pulmuone.webservice.dto.posts.posts.PostsMainResponseDto;
+import com.pulmuone.webservice.post.domain.posts.PostsRepository;
+import com.pulmuone.webservice.post.dto.posts.PostsSaveRequestDto;
+import com.pulmuone.webservice.post.dto.posts.posts.PostsMainResponseDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

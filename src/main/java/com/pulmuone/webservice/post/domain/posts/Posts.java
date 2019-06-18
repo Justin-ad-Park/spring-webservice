@@ -1,6 +1,6 @@
-package com.pulmuone.webservice.domain.posts;
+package com.pulmuone.webservice.post.domain.posts;
 
-import com.pulmuone.webservice.domain.BaseTimeEntity;
+import com.pulmuone.webservice.post.domain.BaseTimeEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;

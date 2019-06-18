@@ -1,4 +1,4 @@
-package com.pulmuone.webservice.web;
+package com.pulmuone.webservice.post.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

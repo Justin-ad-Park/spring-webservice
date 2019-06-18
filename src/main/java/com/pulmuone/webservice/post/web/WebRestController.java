@@ -1,8 +1,7 @@
-package com.pulmuone.webservice.web;
+package com.pulmuone.webservice.post.web;
 
-import com.pulmuone.webservice.domain.posts.Posts;
-import com.pulmuone.webservice.dto.posts.PostsSaveRequestDto;
-import com.pulmuone.webservice.service.PostsService;
+import com.pulmuone.webservice.post.dto.posts.PostsSaveRequestDto;
+import com.pulmuone.webservice.post.service.PostsService;
 import lombok.AllArgsConstructor;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
-import java.util.List;
 
 @RestController
 @AllArgsConstructor

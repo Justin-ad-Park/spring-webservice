@@ -1,4 +1,4 @@
-package com.pulmuone.webservice.domain.posts;
+package com.pulmuone.webservice.post.domain.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

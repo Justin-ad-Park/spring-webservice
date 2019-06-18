@@ -1,4 +1,4 @@
-package com.pulmuone.webservice.domain;
+package com.pulmuone.webservice.post.domain;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

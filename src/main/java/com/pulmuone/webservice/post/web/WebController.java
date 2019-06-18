@@ -1,6 +1,6 @@
-package com.pulmuone.webservice.web;
+package com.pulmuone.webservice.post.web;
 
-import com.pulmuone.webservice.service.PostsService;
+import com.pulmuone.webservice.post.service.PostsService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

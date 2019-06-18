@@ -1,7 +1,7 @@
-package com.pulmuone.webservice.domain;
+package com.pulmuone.webservice.post.domain;
 
-import com.pulmuone.webservice.domain.posts.Posts;
-import com.pulmuone.webservice.domain.posts.PostsRepository;
+import com.pulmuone.webservice.post.domain.posts.Posts;
+import com.pulmuone.webservice.post.domain.posts.PostsRepository;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
