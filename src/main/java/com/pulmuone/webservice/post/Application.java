@@ -16,6 +16,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
  *  http://localhost:8080/h2-console/
  *  JDBC URL : jdbc:h2:mem:testdb
  *
+ * [포트 강제 종료]
+ * sudo lsof -t -i tcp:포트번호 | xargs kill -9
  */
 @EnableJpaAuditing // JPA Auditing 활성화
 @SpringBootApplication
