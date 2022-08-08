@@ -33,6 +33,8 @@ public class RectangleTest {
 
         //then
         assertEquals(200, rect.getArea());
-        assertEquals(200, rect2.getArea());
+
+        //assertEquals(200, rect2.getArea());
+        assertEquals(400, rect2.getArea());
     }
 }
