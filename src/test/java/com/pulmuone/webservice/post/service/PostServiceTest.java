@@ -3,16 +3,13 @@ package com.pulmuone.webservice.post.service;
 import com.pulmuone.webservice.post.domain.posts.Posts;
 import com.pulmuone.webservice.post.domain.posts.PostsRepository;
 import com.pulmuone.webservice.post.dto.posts.PostsSaveRequestDto;
-import org.junit.After;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.aspectj.lang.annotation.After;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class PostServiceTest {
 
@@ -22,7 +19,7 @@ public class PostServiceTest {
     @Autowired
     private PostsRepository postsRepository;
 
-    @After
+    @After("")
     public void cleanup () {
         postsRepository.deleteAll();
     }

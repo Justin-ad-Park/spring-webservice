@@ -1,17 +1,12 @@
 package com.pulmuone.webservice.post.service.oopSample.lsp.rectangle;
 
-import org.junit.After;
-import org.junit.Test;
+import org.aspectj.lang.annotation.After;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RectangleTest {
 
-    @After
-    public void cleanup ()
-    {
-        return;
-    }
 
     @Test
     public void 직사각형_정사각형_면적테스트 () throws Exception {
