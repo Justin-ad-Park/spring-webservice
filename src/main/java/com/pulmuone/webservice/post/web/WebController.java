@@ -14,7 +14,15 @@ public class WebController {
 
     @GetMapping("/")    // == @RequestMapping(value="/", method = RequestMethod.GET)
     public String main(Model model) {
+        model.addAttribute("now", new java.util.Date());
         model.addAttribute("posts", postsService.findAllDesc());
-        return "main";
+        return "index";
     }
+
+//    @GetMapping("/index")    // == @RequestMapping(value="/", method = RequestMethod.GET)
+//    public String bootstapSample(Model model) {
+//        return "index";
+//    }
+
+
 }

@@ -1,14 +1,18 @@
 plugins {
-    id 'org.springframework.boot' version '2.7.2'
     id 'java'
+    id 'org.springframework.boot' version '2.7.2'
+    id 'io.spring.dependency-management' version '1.1.0'
 }
 
-apply plugin: 'io.spring.dependency-management'
-
-group = 'com.pulmuone'
+group = 'com.justin'
 version = '0.0.83'
 sourceCompatibility = '16'
 
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
 
 repositories {
     mavenCentral()
@@ -18,6 +22,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.data:spring-data-commons'
     implementation 'org.springdoc:springdoc-openapi-ui:1.6.8'
@@ -31,7 +36,7 @@ dependencies {
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
 
-    compileOnly 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.1'
+//    compileOnly 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.1'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
 //    compileOnly "org.mariadb.jdbc:mariadb-java-client"
