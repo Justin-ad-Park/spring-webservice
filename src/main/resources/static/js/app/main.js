@@ -6,6 +6,7 @@ var main = {
         });
     },
     save : function () {
+        console.log("before Ajax!!!");
         var data = {
             title: $('#title').val(),
             author: $('#author').val(),
@@ -22,7 +23,8 @@ var main = {
             alert('글이 등록되었습니다.');
             location.reload();
         }).fail(function (error) {
-            alert(error);
+            alert('Error' + error);
+            location.reload();
         });
     }
 

@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--부트스트랩 css 추가-->
-    <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/lib/bootstrap.css">
 
     <title>Demo</title>
 </head>
@@ -13,7 +13,10 @@
 Time on Server : <Span th:text="${now}"></Span>
 <br/>
 <div class="col-md-12">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal">글 등록</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#savePostsModal">
+            글 등록
+    </button>
+
     <br/>
     <br/>
     <!-- 목록 출력 영역 -->
@@ -42,7 +45,7 @@ Time on Server : <Span th:text="${now}"></Span>
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="savePostsLabel">게시글 등록</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -63,16 +66,17 @@ Time on Server : <Span th:text="${now}"></Span>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
                         <button type="button" class="btn btn-primary" id="btn-save">등록</button>
                     </div>
                 </div>
             </div>
         </div>
 
+
         <!--부트스트랩 js, jquery 추가-->
-        <script src="/js/lib/jquery.min.js"></script>
-        <script src="/js/lib/bootstrap.min.js"></script>
+        <script src="/js/lib/jquery-3.6.3.js"></script>
+        <script src="/js/lib/bootstrap.bundle.js"></script>
 
         <!--custom js 추가-->
         <script src="/js/app/main.js"></script>
